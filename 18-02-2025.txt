@@ -1,0 +1,124 @@
+LCM & HCF
+
+// You are using GCC
+#include<stdio.h>
+int main(){
+    int n,m;
+    scanf("%d %d",&n,&m);
+    int h=0,l=0;
+    if(m==1){
+        h=m;
+    }
+    else{
+    for(int i=2;i<=m;i++){
+        if(n%i==0 && m%i==0){
+            h=i;
+        }
+        }
+    }
+    printf("HCF = %d\n",h);
+    int g=m;
+    int r=n;
+    while(m>0){
+        int t=m;
+        m=n%m;
+        n=t;
+    }
+     printf("LCM = %d\n",(r*g)/n);
+    
+}
+
+Harshad Number
+// You are using GCC
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int c=0;
+    int f=n;
+    while(f>0){
+        
+        int d=f%10;
+        c+=d;
+        f/=10;
+    }
+    if(n%c==0){
+        printf("%d is a Harshad number",n);
+    }
+    else{
+        printf("%d is not a Harshad number",n);
+    }
+}
+
+Strong Number
+// You are using GCC
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int s=0,f=n;
+    while(f>0){
+        int g=f%10;
+        int p=1;
+        for(int i=1;i<=g;i++){
+            p*=i;
+        }
+        s+=p;
+        f/=10;
+    }
+    if(s==n){
+        printf("%d Strong Number",n);
+    }
+    else{
+        printf("%d Not Strong Number",n);
+    }
+}
+
+Abundant Number
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int s=0;
+        for(int i=1;i<n;i++){
+            if(n%i==0){
+                s+=i;
+            }
+        }
+        if(s>n){
+            System.out.print(n+" is an Abundant number");
+        }
+        else{
+            System.out.print(n+" is not an Abundant number");
+        }
+    }
+}
+
+Perfect Number
+// You are using GCC
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int s=0;
+    for(int i=1;i<n;i++){
+        if(n%i==0){
+            s+=i;
+        }
+    }
+    if(s==n){
+        printf("%d",n*n);
+    }
+    else{
+        int f=n;
+        int s1=0;
+        while(f>0){
+            int u=f%10;
+            s1+=u;
+            f/=10;
+        }
+        printf("%d",s1);
+    }
+}
