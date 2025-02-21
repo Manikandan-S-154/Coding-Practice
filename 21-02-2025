@@ -1,0 +1,172 @@
+Non-Fibonacci Series
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        Set<Integer>s=new HashSet<>();
+        int a=0,b=1;
+        s.add(a);
+        s.add(b);
+        while(b<=n){
+            int c=a+b;
+            a=b;
+            b=c;
+            s.add(c);
+        }
+        for(int i=1;i<=n;i++){
+            if(!s.contains(i)){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+
+Peak Element
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int[] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int f=0;
+        for(int i=1;i<n-1;i++){
+            if(a[i]>a[i-1] && a[i]>a[i+1]){
+                System.out.print("Peak Element: "+a[i]+" at index "+i);
+                f=1;
+                return;
+            }
+        }
+        if(f==0){
+            System.out.printf("Peak Element: %d at index %d",a[n-1],n-1);
+        }
+    }
+}
+
+Vowel count
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        int c=0;
+        for(int i=0;i<s.length();i++){
+            char a=s.charAt(i);
+            if(a=='a'|| a=='A'||a=='e'||a=='E'||a=='i'||a=='I'||a=='o'||a=='O'||a=='u'|| a=='U'){
+                c++;
+            }
+        }
+        System.out.print(c);
+    }
+}
+
+Two Array Equal or not
+// You are using Java
+import java.util.*;
+public class Main{
+    public static String check(int[]a,int n,int[]b,int m){
+        int i=0,j=0;
+        for(i=0,j=0;i<n && j<m;i++, j++){
+            if(a[i]!=b[j]){
+                return "Not Equal";
+            }
+        }
+        return "Equal";
+    }
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int[]a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int m=x.nextInt();
+        int[]b=new int[m];
+        for(int i=0;i<m;i++){
+            b[i]=x.nextInt();
+        }
+        if(m!=n){
+            System.out.printf("Not Equal");
+            return;
+        }
+        System.out.print(check(a,n,b,m));
+    }
+}
+
+
+Subsequences
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        List<String> a=new ArrayList<>();
+        a.add(" ");
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            int si=a.size();
+            for(int j=0;j<si;j++){
+                a.add(a.get(j)+c);
+            }
+        }
+            Set<String>d=new HashSet<>(a);
+            d.remove(" ");
+        System.out.print(d.size());
+    }
+}
+
+Two-dimensional Array sum
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int m=x.nextInt();
+        int[][]a=new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                a[i][j]=x.nextInt();
+            }
+        }
+        int s=0;
+         for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                s+=a[i][j];
+            }
+         }
+         System.out.print(s);
+    }
+}
+
+3 factorial
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int []a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int c=0;
+        for(int i=0;i<n;i++){
+            if(a[i]%3==0){
+                c++;
+            }
+        }
+        System.out.print(c);
+    }
+}
+
+
+
