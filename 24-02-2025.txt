@@ -1,0 +1,211 @@
+Infix to Prefix
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        String p=in(s);
+        System.out.print(p);
+    }
+    public static boolean is(char c){
+        return c=='+'||c=='-'|| c=='*'||c=='/'||c=='^';
+    }
+    public static int pr(char c){
+        switch(c){
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            case '^':
+                return 3;
+        }
+        return -1;
+    }
+    public static String r(String s1){
+        StringBuilder re=new StringBuilder();
+        for(int i=s1.length()-1;i>=0;i--){
+            char c=s1.charAt(i);
+            if(c=='(')
+            re.append(')');
+            else if(c==')')
+            re.append('(');
+            else
+            re.append(c);
+        }
+        return re.toString();
+    }
+    public static String in(String s){
+        s=r(s);
+        Stack<Character>st=new Stack<>();
+        StringBuilder pre=new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if(Character.isLetterOrDigit(c)){
+                pre.append(c);
+            }
+            else if(c=='('){
+                st.push(c);
+            }
+            else if(c==')'){
+                while(!st.isEmpty() && st.peek()!='('){
+                    pre.append(st.pop());
+                }
+                st.pop();
+            }
+            else if(is(c)){
+                while(!st.isEmpty() && pr(c)<pr(st.peek())){
+                    pre.append(st.pop());
+                }
+                st.push(c);
+            }
+        }
+        while(!st.isEmpty()){
+            pre.append(st.pop());
+        }
+        return pre.reverse().toString();
+    }
+}
+
+
+Pairwise
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int[]a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        boolean f =true;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==j){
+                    continue;
+                }
+                if(a[i]==a[j]){
+                    f=true;
+                    break;
+                }
+                else{
+                    f=false;
+                }
+            }
+            if(f==false){
+                System.out.print(a[i]);
+                break;
+            }
+        }
+    }
+}
+
+
+pairwise sums
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int []a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int size=x.nextInt();
+        int o[]=new int[size];
+        o[0]=(a[0]+a[1]-a[size-1])/2;
+        for(int i=1;i<size;i++){
+            o[i]=a[i-1]-o[0];
+           
+        }
+        for(int i=0;i<size;i++){
+            System.out.print(o[i]+" ");
+        }
+    }
+}
+
+
+deletion of array element
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int[]a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int in=x.nextInt();
+        if(in>n){
+            System.out.print("Invalid position!");
+            for(int i=0;i<n;i++){
+                System.out.print(a[i]+" ");
+            }
+        }
+        else{
+            for(int i=0;i<n;i++){
+                if(in-1==i){
+                continue;
+                }
+                System.out.print(a[i]+" ");
+            }
+        }
+    }
+}
+
+
+alternate print
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int[]a=new int[n];
+        int[]b=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            b[i]=x.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" "+b[i]+" ");
+        }
+    }
+}
+
+Rotate array
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int[]a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+            System.out.print(a[i]+" ");
+        }
+        int k=x.nextInt();
+        while(k>0){
+            int t=a[n-1];
+            for(int i=n-1;i>0;i--){
+                a[i]=a[i-1];
+            }
+            a[0]=t;
+            k--;
+        }
+        System.out.println();
+         for(int i=0;i<n;i++){
+
+            System.out.print(a[i]+" ");
+        }
+    }
+}
