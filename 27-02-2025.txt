@@ -1,0 +1,92 @@
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        String[]a=s.split(" ");
+        int l=0;
+        String r=" ";
+        for(int i=0;i<a.length;i++){
+            if(a[i].length()>l){
+                l=a[i].length();
+                r=a[i];
+            }
+        }
+        System.out.print(r);
+    }
+}
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        String r=s.replaceAll("\\s","");
+        System.out.print(r);
+    }
+}
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        String[]a=s.split(" ");
+        String q=" ";
+        for(int i=0;i<a.length;i++){
+            String w=a[i];
+            q+=w.substring(0,1).toUpperCase()+w.substring(1);
+            q+=" ";
+        }
+        System.out.print(q);
+    }
+}
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        StringBuilder r=new StringBuilder(s).reverse();
+        System.out.print(r);
+    }
+}
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        int w=0;
+        for(int i=0;i<s.length();i++){
+            int e=(char)s.charAt(i)-96;
+            w+=e;
+        }
+        System.out.print(w);
+    }
+}
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s1=x.nextLine();
+        String s2=x.nextLine();
+        int i=0,j=0;
+        while(i<s1.length() && j<s2.length()){
+            if(s1[i]==t[j]){
+                i++;
+            }
+            j++;
+        }
+        System.out.print(i);
+    }
+}
