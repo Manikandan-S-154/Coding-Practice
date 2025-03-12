@@ -1,0 +1,163 @@
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            if(!(c(a[i]))){
+                System.out.print(a[i]+" ");
+            }
+        }
+    }
+    public static boolean c(int n){
+        if(n<2){
+            return false;
+        }
+        if(n==2){
+            return true;
+        }
+        if(n%2==0){
+            return false;
+        }
+        for(int i=3;i<Math.sqrt(n);i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int e=x.nextInt();
+        int c=0;
+        for(int i=0;i<n;i++){
+            if(a[i]==e){
+                c++;
+            }
+        }
+        if(c>=n/2){
+            System.out.print("YES");
+        }
+        else{
+            System.out.print("NO");
+        }
+    }
+}
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String [] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a =new int [n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int e=x.nextInt();
+        int c=0;
+        boolean f=true;
+        for(int i=0;i<n;i++){
+            if(a[i]==e){
+                f=false;
+                break;
+            }
+        }
+        if(f){
+            System.out.print(e+" not found in the array");
+            return;
+        }
+        for(int i=0;i<n;i++){
+            if(a[i]==e){
+                c++;
+            }
+        }
+        System.out.print("Sorted array elements: "+e+" found "+c+" times and deleted successfully");
+        Arrays.sort(a);
+        System.out.println();
+        System.out.print("Remaining array: ");
+        for(int i=0;i<n;i++){
+            if(a[i]!=e){
+                System.out.print(a[i]+" ");
+            }
+        }
+    }
+}
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int c=0;
+        if(a[0]<a[n-1]){
+            c++;
+        }
+        for(int i=0;i<n-1;i++){
+            if(a[i]>a[i+1]){
+                c++;
+            }
+            if(c>1){
+                break;
+            }
+        }
+        if(c<2){
+            System.out.print("1");
+        }
+        else{
+            System.out.print("0");
+        }
+    }
+}
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        int m=0,mi=0,ma=0;
+        for(int i=0;i<n;i++){
+            mi=a[i];
+            ma=a[i];
+            for(int j=i;j<n;j++){
+                mi=Math.min(mi,a[j]);
+                ma=Math.max(ma,a[j]);
+            if(ma-mi<2){
+                m=Math.max(m,j-i+1);
+            }
+            else{
+                break;
+            }}
+        }
+        System.out.print(m);
+    }
+}
