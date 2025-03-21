@@ -1,0 +1,114 @@
+// You are using GCC
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100];
+    fgets(s,sizeof(s),stdin);
+    int n=0;
+    scanf("%d",&n);
+    if(n<=0){
+        printf("INVALID INPUT");
+        return 0;
+    }
+    else{
+    for(int i=0;i<strlen(s);i++){
+        char c=s[i];
+        if(c>='a' && c<='z'){
+            c=((c-'a'+n)%26)+'a';
+        }
+        else if(c>='A' && c<='Z'){
+            c=((c-'A'+n)%26)+'A';
+        }
+        printf("%c",c);
+    }
+    }
+}
+
+
+// You are using GCC
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100];
+    fgets(s,sizeof(s),stdin);
+    int l=0;
+    scanf("%d",&l);
+    for(int i=0;i<l;i++){
+        printf("%c",s[i]);
+    }
+    for(int i=strlen(s)-l-1;i<strlen(s);i++){
+        printf("%c",s[i]);
+    }
+}
+
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String [] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        String d="";
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if(!(c>=65 && c<=90)){
+                System.out.print(c);
+            }
+            else{
+                d=d+c;
+            }
+        }
+        System.out.print(d);
+    }
+}
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        String s=x.nextLine();
+        char d=s.charAt(0);
+        if(s.length()==1 && d=='0'){
+            System.out.print(s);
+            return;
+        }
+        int i=0;
+        boolean f=true;
+        while(f){
+            if(s.charAt(i)!='0'){
+                f=false;
+                break;
+            }
+            else
+            i++;
+        }
+        for(int h=i;h<s.length();h++){
+            System.out.print(s.charAt(h));
+        }
+    }
+}
+
+
+
+// You are using GCC
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100];
+    fgets(s,sizeof(s),stdin);
+    char a;
+    scanf(" %c",&a);
+    int c=0;
+    int l=strlen(s);
+    for(int i=0;i<l;i++){
+        if(s[i]==a){
+            c++;
+        }
+    }
+    printf("Frequency of %c = %d",a,c);
+}
