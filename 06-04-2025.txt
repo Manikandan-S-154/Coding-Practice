@@ -1,0 +1,120 @@
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        Arrays.sort(a);
+        int e=x.nextInt();
+        boolean f=false;
+        for(int i=1;i<n;i++){
+            if(a[i]-a[i-1]==e){
+                f=true;
+                System.out.printf("(%d, %d)",a[i-1],a[i]);
+                break;
+            }
+        }
+        if(!f){
+            System.out.print("No such pair");
+        }
+    }
+}
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        Arrays.sort(a);
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a= new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        List<Integer> o=new ArrayList<>();
+        List<Integer> e=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if((i+1)%2==0){
+                e.add(a[i]);
+            }
+            else{
+                o.add(a[i]);
+            }
+        }
+        Collections.sort(o,Collections.reverseOrder());
+        Collections.sort(e);
+        int oi=0,ei=0;
+        for(int i=0;i<n;i++){
+            if((i+1)%2==0){
+                System.out.print(e.get(ei++)+" ");
+            }
+            else{
+                System.out.print(o.get(oi++)+" ");
+            }
+        }
+    }
+}
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int [] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=x.nextInt();
+        }
+        Arrays.sort(a);
+        int k=x.nextInt();
+        System.out.print(a[k-1]);
+    }
+}
+
+
+
+// You are using Java
+import java.util.*;
+public class Main{
+    public static void main(String[] abs){
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        for(int i=0;i<n;i++){
+            int [] a=new int[3];
+            for(int j=0;j<n;j++){
+                a[j]=x.nextInt();
+            }
+            Arrays.sort(a);
+            for(int k=0;k<n;k++){
+                System.out.print(a[k]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
